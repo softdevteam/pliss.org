@@ -1,0 +1,30 @@
+#! /bin/sh
+
+set -e
+
+WEB_ROOT=/var/www/sites/pliss.org
+
+cd $HOME/pliss.org
+pre_md5=`git log --pretty=oneline -1`
+
+git pull || ( sleep 15 ; git pull )
+post_md5=`git log --pretty=oneline -1`
+if [ -d $WEB_ROOT ]; then
+    if [[ $pre_md5 == $post_md5 ]]; then
+        exit 0
+    fi
+fi
+
+rm -rf htdocs
+make
+
+mkdir -p $WEB_ROOT/logs
+if [ ! -d $WEB_ROOT/htdocs ]; then
+    mv htdocs $WEB_ROOT/htdocs
+else
+    mv htdocs $WEB_ROOT/htdocs_new
+    cd $WEB_ROOT
+    mv htdocs htdocs_old
+    mv htdocs_new htdocs
+    rm -rf htdocs_old
+fi
