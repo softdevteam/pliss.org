@@ -44,9 +44,9 @@ class Build:
                     # get current page name
                     assert dest.startswith(self._abs_htdocs_dir)
                     page = dest[len(self._abs_htdocs_dir)+1:]
-                    m = re.match("%s\/([^/\.]+)" % self.htdocs_dir, dest)
+                    m = re.match("([^\.]*\/)*(([^\.]+).html)", page)
                     if m:
-                        page = m.group(1)
+                        page = m.group(3)
                     else:
                         page = ""
 
@@ -54,7 +54,7 @@ class Build:
                     rootpath = ("../" * root.count("/"))[:-1]
 
                     f = codecs.open(dest, "w", encoding="utf-8")
-                    f.write(content.render_unicode(host=SITE_NAME, rootpath=rootpath, leaf=l))
+                    f.write(content.render_unicode(host=SITE_NAME, rootpath=rootpath, leaf=l, page=page))
                     f.close()
                 else:
                     print("Copy", dest)
