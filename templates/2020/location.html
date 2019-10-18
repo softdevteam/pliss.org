@@ -1,0 +1,127 @@
+<%include file="header.inc" args="title='Location'"/>
+
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="container">
+
+					<header class="major special">
+						<h2>Location</h2>
+						<p>And other information</p>
+					</header>
+
+                    <p>The <strong>University Residential Centre of Bertinoro</strong> (Ce.U.B.) is active since 1994
+                    and is located in the ancient town of Bertinoro located on the hilltop of the
+                    Romagna area, between the cities of Forlì and Cesena. The University Centre is
+                    unique in its location on the hilltop of Bertinoro which also offers stunning
+                    views. The address for Ce.U.B. is Frangipane 6, Bertinoro 47032.</p>
+                    
+                    <h4>Arrival information:</h4>
+
+                    <p>Check-in will be held on Sunday 19 of May from 09:00
+                    onwards in Frangipane 4, Bertinoro 47032.<br />
+
+                    Below is an image of the locations at Bertinoro:</p>
+                    <span class="image fit"><img src="images/uni_centre.jpg" alt=""></span>
+                    
+                    <h4>Contact number:</h4>
+
+                    <p>University Residential Center secretary office: +39 0543 446500 / +39 0543 446550</p>
+
+                    <h4>How to reach Bertinoro:</h4>
+
+                    <p>Bertinoro is situated halfway between Forlì and Cesena,
+                    6 km away from SS9 (Via Emilia), immediately east from
+                    Forlimpopoli.</p>
+
+                    <p>
+                    <div class="map-holder">
+                        <div class="google-map-canvas" id="map-canvas" style="height: 250px;">
+                        </div>
+                    </div>
+                    </p>
+
+                    <h4>Highway:</h4>
+                    <p>Driving from Bologna: take Forlì exit on A-14 highway
+                    and follow the signals for
+                    Cesena-Forlimpopoli-Bertinoro.<br />
+                        
+                    Driving from Rimini: take Cesena Nord exit on A-14
+                    highway, then follow E45 street to Rome till Cesena Ovest
+                    exit. Turn right on SS9 (Via Emilia), towards
+                    Forlì-Bologna. Follow signals for Bertinoro.<br />
+                        
+                    GPS coordinates: Latitude: 44.148913 - Longitude:
+                    12.132533</p>
+                        
+                    <h4>Railway:</h4>
+                    <p>Bologna-Rimini line, get off at Forlì or Cesena,
+                    followed by bus or taxi.<br /> The Forlimpopoli-Bertinoro
+                    station is not recommended it has an infrequent service.
+                    <a href="https://www.italiarail.com/">Search for train times</a>.</p>
+
+                    <h5>To reach the University Center</h5>
+                    <p>Taxi service: in front of train stations<br />
+                    Phone: +39 0543 31111 from Forlì - +39 0547 610710 from Cesena</p>
+
+                    <h4>Bus service:</h4>
+                    <p>Line nr.92 from Bus Point (close to the railway
+                    station), get off at Forlimpopoli and catch a second bus,
+                    line nr.121, towards Bertinoro.<br />
+                    Bus scheduling on the following web-site:
+                    <a href="http://www.startromagna.it/servizi/orari-e-percorsi" target="_blank">http://www.startromagna.it/servizi/orari-e-percorsi</a>
+                    </p>
+                        
+                    <h4>Plane:</h4>
+                    <p>The closest airport to the University Center of
+                    Bertinoro is Bologna (BLQ), about 80 km away.<br />
+                        
+                    Otherwise Rimini Airport (RMN) is 40 km away from
+                    Bertinoro. Available for some European flights.</p>
+                        
+                    <h4>Info:</h4>
+                    <p>Additional information regarding Bertinoro can be found
+                    <a href="http://ceub.it/contatti-2/?lang=en">here</a>.
+                    </p>
+
+				</div>
+			</section>
+
+            <script type="text/javascript">
+                function initialize() {
+                      var myLatlng = new google.maps.LatLng(44.14754, 12.132619);
+                      var markerLatlng = new google.maps.LatLng(44.14754, 12.132619);
+                      /*var markerLatlng = new google.maps.LatLng(50.1392978, 14.0954);*/
+                      
+                      var mapOptions = {
+                                scrollwheel: false,
+                          zoom: 15,
+                          center: markerLatlng
+                      };
+                      var map = new google.maps.Map(document.getElementById('map-canvas'),
+                          mapOptions);
+                      
+                      var marker = new google.maps.Marker({
+                        position: markerLatlng,
+                        map: map,
+                        /*label: 'PRL-PRG',*/
+                        /*animation: google.maps.Animation.DROP,*/
+                        title: 'PRL-PRG'
+                      });
+                    
+                    } 
+                    function loadScript() {
+                      var script = document.createElement('script');
+                      script.type = 'text/javascript';
+                      script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&' +
+                          'callback=initialize&key=AIzaSyC9HM4VTq6fmNiS6VdBhXLpt8zJZ7AWZus&language=en&region=EN';
+                      document.body.appendChild(script);
+                    }
+                    window.onload = loadScript;
+                    $(document).keyup(function(e) {
+                        if (e.keyCode == 27) { // escape key maps to keycode `27`
+                            $('#myModal').modal('hide');
+                        }
+                    });
+            </script>
+
+<%include file="footer.inc" />
