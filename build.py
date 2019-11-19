@@ -57,9 +57,11 @@ class Build:
                     f.write(content.render_unicode(host=SITE_NAME, rootpath=rootpath, leaf=l, page=page))
                     f.close()
                 else:
-                    print("Copy", dest)
+                    sys.stdout.write("Copy %s" % dest)
                     if os.path.exists(dest) and os.stat(source).st_mtime <= os.stat(dest).st_mtime:
+                        sys.stdout.write(" (cached)\n")
                         continue
+                    sys.stdout.write("\n")
                     shutil.copy(source, dest)
                     shutil.copystat(source, dest)
 
