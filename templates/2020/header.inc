@@ -27,12 +27,11 @@
 				<nav id="nav">
 					<ul>
 						<li><a href="index.html">Home</a></li>
-						<li><a href="speakers.html">Speakers</a></li>
 						<li><a href="lectures.html">Lectures</a></li>
 						<li><a href="location.html">Location</a></li>
-						<li><a href="faq.html">FAQ</a></li>
-						<li><a href="registration.html">Registration</a></li>
 						<li><a href="organisers.html">Organisers</a></li>
+						<li><a href="registration.html">Registration</a></li>
+						<li><a href="speakers.html">Speakers</a></li>
 					</ul>
 				</nav>
 			</header>
