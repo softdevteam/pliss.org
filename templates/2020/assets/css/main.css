@@ -3100,9 +3100,9 @@
 	}
 
 	#banner {
-		padding: 12em 0 8em 0;
+		padding: 13em 0 9em 0;
 		background-attachment: fixed;
-		background-image: url("images/overlay2.png"), url("../../images/picture-1.jpg");
+		background-image: /*url("images/overlay2.png"),*/ url("../../images/picture-1.jpg");
 		background-position: center top;
 		background-size: cover;
 		line-height: 1.75;
@@ -3122,9 +3122,9 @@
 		}
 
 		#banner p {
-			color: #aaa;
+			color: #fff;
 			font-size: 1.5em;
-			margin-bottom: 1.75em;
+			margin: 0em;
 			text-transform: uppercase;
 		}
 

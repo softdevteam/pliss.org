@@ -22,7 +22,7 @@
     <body${ ' class="landing"' if page=='index' else '' }>
 
 		<!-- Header -->
-			<header id="header" ${ 'class="alt"' if page=='index' else '' }>
+			<header id="header" ${ 'style="position: initial"' if page=='index' else '' }>
 				<h1><strong><a href="index.html"><img src="images/pliss-logo-col.png" style="height: 50px; vertical-align: middle; margin-left: 1em" /></a></strong></h1>
 				<nav id="nav">
 					<ul>
