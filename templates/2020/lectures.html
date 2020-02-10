@@ -166,10 +166,26 @@
                         <hr>
 
                         <header>
-                            <h4>Language design at industrial scale</h4>
+                            <h4>Incremental compilation</h4>
                             <p>Julien Verlaguet</p>
                         </header>
                         <p>
+                        A few years ago, Facebook developed Hack, a PHP dialect with optional
+                        typing. The main challenge for Hack was compilation times. PHP developers
+                        were used to iterate rapidly on their code. To preserve this experience,
+                        Hack had to be able to respond with error messages instantly, which on a
+                        multi-million line codebase was challenging.
+
+                        A massively parallel/highly incremental system was born: the Hack
+                        type-checker. After years of hard work, and despite a great success in
+                        terms of adoption within the company, it became clear that we needed a
+                        better technology to build large incremental systems such as the Hack
+                        type-checker. That's how a new programming language (SKIP) was born. One
+                        could say: SKIP is the language we wished we had while building Hack.
+
+                        In this talk, I will discuss the challenges faced during the development of
+                        the Hack type-checker, and how those lead to the development of a new
+                        programming language: SKIP.
                         </p>
 
                         <hr>
