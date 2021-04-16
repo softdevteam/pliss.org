@@ -1698,6 +1698,14 @@
 		line-height: 1.5em;
 	}
 
+    h4 a:hover {
+        -moz-transition: color 0.2s ease-in-out;
+        -webkit-transition: color 0.2s ease-in-out;
+        -ms-transition: color 0.2s ease-in-out;
+        transition: color 0.2s ease-in-out;
+		color: #e68e05;
+    }
+
 	h5 {
 		font-size: 0.9em;
 		line-height: 1.5em;
