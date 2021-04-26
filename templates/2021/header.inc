@@ -27,6 +27,7 @@
 				<nav id="nav">
 					<ul>
 						<li><a href="index.html">Home</a></li>
+						<li><a href="lectures.html">Lectures</a></li>
 						<li><a href="organisers.html">Organisers</a></li>
 						<li><a href="registration.html">Registration</a></li>
 						<li><a href="speakers.html">Speakers</a></li>
