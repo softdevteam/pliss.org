@@ -30,6 +30,7 @@
 						<li><a href="lectures.html">Lectures</a></li>
 						<li><a href="organisers.html">Organisers</a></li>
 						<li><a href="registration.html">Registration</a></li>
+						<li><a href="schedule.html">Schedule</a></li>
 						<li><a href="speakers.html">Speakers</a></li>
 					</ul>
 				</nav>
