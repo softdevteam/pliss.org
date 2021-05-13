@@ -1,5 +1,51 @@
 <%include file="header.inc" args="title='Speakers'"/>
 
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/css/bootstrap-select.min.css">
+            <link rel="stylesheet" href="/2020/assets/css/main.css" />
+
+            <style>
+                .bootstrap-select.btn-group .dropdown-toggle .filter-option {
+                    display: inline-block;
+                    overflow: hidden;
+                    width: 100%;
+                    text-align: left;
+                    color: #000;
+                }
+                .span5 {
+                    width: auto !important;
+                }
+                .caret {
+                    color: #000 !important;
+                }
+            </style>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.10/moment-timezone-with-data.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/js/bootstrap-select.min.js"></script>
+
+            <script>
+                function update_tz() {
+                    var schedule = [];
+                    schedule[0] = moment.tz("2021-05-20 10:00", "Europe/London");
+                    schedule[1] = moment.tz("2021-05-28 12:00", "Europe/London");
+                    schedule[2] = moment.tz("2021-06-05 16:00", "Europe/London");
+                    schedule[3] = moment.tz("2021-06-13 17:00", "Europe/London");
+                    schedule[4] = moment.tz("2021-06-21 08:00", "Europe/London");
+                    schedule[5] = moment.tz("2021-06-29 16:00", "Europe/London");
+
+                    var tzoff = document.getElementById("tz").value;
+                    for (i = 0; i < schedule.length; i++) {
+                        var olddate = schedule[i];
+                        var newdate = olddate.tz(tzoff);
+                        document.getElementById("sched" + i + "_m").innerHTML = newdate.format("MMMM");
+                        document.getElementById("sched" + i + "_d").innerHTML = newdate.format("D");
+                        document.getElementById("sched" + i + "_t").innerHTML = newdate.format("HH:mm");
+                    }
+                }
+            </script>
 
 			<section id="main" class="wrapper">
 				<div class="container">
@@ -8,19 +54,64 @@
                         <h2>Schedule</h2>
                     </header>
 
-<table>
-<tr><td>May</td><td>20</td><td>Felienne Hermans</td><td>Technical talk</td></tr>
-<tr><td></td><td>28</td><td>Felienne Hermans, Hannes Payer</td><td>Mentoring session</td></tr>
-<tr><td>June</td><td>5</td><td>Ranjit Jhala</td><td>Technical talk</td></tr>
-<tr><td></td><td>13</td><td>Ranjit Jhala, Chris Seaton</td><td>Mentoring session</td></tr>
-<tr><td></td><td>21</td><td>Manuel Serrano</td><td>Technical talk</td></tr>
-<tr><td></td><td>29</td><td>Francesco Zappa Nardelli</td><td>Technical talk</td></tr>
-</table>
+                    <div style="margin-bottom: 2em">
+                        Select timezone: <select id="tz" class="span5" onchange="update_tz()" data-live-search="true" ></select>
+                    </div>
 
-Sessions will typically last around 2 hours. Precise times TBC, but sessions
-will be spread throughout the day to maximise accessibility for people in as
-wide a variety of timezones as practicable.
+                    <table>
+                        <tr>
+                            <td id="sched0_m" style="width: 1%">May</td>
+                            <td id="sched0_d">20</td>
+                            <td id="sched0_t">10:00</td>
+                            <td>Felienne Hermans</td><td>Technical talk</td>
+                        </tr>
+                        <tr>
+                            <td id="sched1_m"></td>
+                            <td id="sched1_d">28</td>
+                            <td id="sched1_t">12:00</td>
+                            <td>Felienne Hermans, Hannes Payer</td>
+                            <td>Mentoring session</td>
+                        </tr>
+                        <tr>
+                            <td id="sched2_m">June</td>
+                            <td id="sched2_d">5</td>
+                            <td id="sched2_t">16:00</td>
+                            <td>Ranjit Jhala</td><td>Technical talk</td>
+                        </tr>
+                        <tr>
+                            <td id="sched3_m"></td>
+                            <td id="sched3_d">13</td>
+                            <td id="sched3_t">17:00</td>
+                            <td>Ranjit Jhala, Chris Seaton</td><td>Mentoring session</td>
+                        </tr>
+                        <tr>
+                            <td id="sched4_m"></td>
+                            <td id="sched4_d">21</td>
+                            <td id="sched4_t">08:00</td>
+                            <td>Manuel Serrano</td><td>Technical talk</td>
+                        </tr>
+                        <tr>
+                            <td id="sched5_m"></td>
+                            <td id="sched5_d">29</td>
+                            <td id="sched5_t">16:00</td>
+                            <td>Francesco Zappa Nardelli</td><td>Technical talk</td>
+                        </tr>
+                    </table>
+
+                    Sessions will typically last around 2 hours. Precise times TBC, but sessions
+                    will be spread throughout the day to maximise accessibility for people in as
+                    wide a variety of timezones as practicable.
 
                 </div>
             </section>
+
+            <script>
+                var timezone = moment.tz.names();
+                for (var i = 0; i < timezone.length; i++) {
+                    var timeoffset = moment.tz(timezone[i]).format('Z');
+                    $('select').append('<option value="' + timezone[i] + '">' + "GMT" + timeoffset + " " + timezone[i] + '</option>');
+                }
+                $('select').selectpicker();
+                $('#tz').val(moment.tz.guess()).change();
+            </script>
 <%include file="footer.inc" />
