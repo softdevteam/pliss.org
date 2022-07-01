@@ -9,9 +9,9 @@
 	<head>
 		<title>
 %if title:
-	PLISS 2021: ${title}
+	PLISS 2022: ${title}
 %else:
-    PLISS 2021
+    PLISS 2022
 %endif
         </title>
 		<meta charset="utf-8" />
