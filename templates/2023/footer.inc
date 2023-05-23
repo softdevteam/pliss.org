@@ -2,8 +2,11 @@
 		<!-- Footer -->
 			<footer id="footer">
 				<div class="container">
-					<ul class="icons">
-						<li><a href="https://pliss.org/2020">PLISS 2020</a></li>
+				<ul class="icons">
+
+				<li><a href="https://pliss2017.github.io">PLISS 2017</a></li>
+				<li><a href="https://pliss2019.github.io">PLISS 2019</a></li>
+				<li><a href="https://pliss.org/2020">PLISS 2020</a></li>
 						<li><a href="https://pliss.org/2021">PLISS 2021</a></li>
 						<li><a href="https://pliss.org/2022">PLISS 2022</a></li>
                     </ul>
