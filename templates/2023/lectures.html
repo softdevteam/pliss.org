@@ -71,30 +71,35 @@
       <p>Manuel Serrano</p>
       </header>
       <p>
-      JavaScript is particularly difficult to implement efficiently because
-      most of its expressions have all sorts of different meanings that involve
-      all sorts of different executions that are not distinguished by any
-      syntactic or type annotation. The common intuition is that only JIT
-      compilers can handle it efficiently because they can rely on
-      heuristic-based strategies that require having the program and the data
-      on hand. But static (AOT) compilers can speculate and use heuristics too!
-      To demonstrate that, we propose Hopc, an AOT compiler for JavaScript,
-      based on the following assumption:
-
-      The most likely data structure a program will use is the one for which
-      the compiler is able to produce its best code.
-
-      Thus, contrary to most AOT compilers, Hopc does not rely on complex
-      static analyses to optimize programs. It simply tries to generate its
-      best code that it protects with guards.
-
-      In this lecture, we will first present the basic techniques for compiling
-      classical dynamically typed functional programming such as Scheme, and
-      then, once that sets, we will dig into the specificities of the
-      compilation of modern dynamic languages such as JavaScript.
+      JavaScript is difficult to implement efficiently because
+      expressions have meanings that involve all sorts of different
+      executions not distinguished by any syntactic or type
+      annotation. The intuition is that only JIT compilers can handle
+      it efficiently because they rely on heuristic-based strategies
+      that require both program and data.  Static (AOT) compilers can
+      speculate and use heuristics too!  To demonstrate, we propose
+      Hopc, an AOT compiler for JavaScript, based on the following
+      assumption: The most likely data structure a program will use is
+      the one for which the compiler can produce its best code.  Thus,
+      contrary to most AOTs, Hopc does not rely on complex static
+      analyses. It simply generates its best code that it protects
+      with guards.  In this lecture, I will present the basic
+      techniques for compiling classical dynamically typed functional
+      programming such as Scheme, and then dig into the specificities
+      of JavaScript.
       </p>
       <hr>
 
+      <div id="lippautz" style="margin-top: -6em; position: absolute"></div>
+      <header>
+      <h4>Web rendering architecture, now and the future</h4>
+      <p>Michael Lippautz</p>
+      </header>
+      <p>
+      </p>
+      <hr>
+
+      
       <div id="wadler" style="margin-top: -6em; position: absolute"></div>
       <header>
       <h4>Programming Language Foundations in Agda</h4>
@@ -134,6 +139,9 @@
 
 	<div id="david" style="margin-top: -6em; position: absolute"></div>
 	<header><h4>Architecture of the multi-language static analysis platform Infer</h4> <p>David Piachardie</p> </header>
+
+	<div id="jan" style="margin-top: -6em; position: absolute"></div>
+	<header><h4>Reusable Just in time compilation</h4> <p>Jan Vitek</p> </header>
 
 
   </div>
