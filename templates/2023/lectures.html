@@ -32,6 +32,34 @@
 	implementation of a C++ runtime and compare Verona to Pony. </P>
       <hr>
 
+      <div id="tony" style="margin-top: -6em; position: absolute"></div>
+      <header>
+        <h4>On-the-fly concurrent garbage collection formalization and verification</h4>
+        <p>Tony Hosking</p>
+      </header>
+      <p>I introduce the basic principles of concurrent garbage collection,
+      including on-the-fly garbage collection, focusing on the correctness
+      challenges for garbage collectors due to concurrent mutation by the
+      application program. We will then discuss approaches to solving these
+      problems, and characterize these solutions with respect to an abstract
+      garbage collection algorithm in terms of invariants that preserve the
+      safety of the algorithm. I then discuss a concrete garbage collection
+      algorithm designed to operate efficiently on weak memory multicore
+      hardware, and argue informally for its correctness. I then describe how
+      we have been able to formally and mechanically verify the correctness of
+      this algorithm for weak memory using the Isabelle proof assistant.</p>
+      <header>
+        <h4>Advances in production concurrent collectors over the past decade</h4>
+        <p>Tony Hosking</p>
+      </header>
+      <p>We will look at the evolution of production concurrent collectors over
+      the past decade, treating primarily concurrent marking and compaction.
+      Collectors described include Compressor, Azul’s Pauseless/C4 and Collie,
+      OpenJDK’s ZGC and Generational ZGC, OpenJDK’s Shenandoah, and LXR (a
+      mostly non-concurrent, mostly reference-counting compacting collector as
+      counterpoint).</p>
+      <hr>
+
       <div id="stefan" style="margin-top: -6em; position: absolute"></div>
       <header>
       <h4>Interpreters: Everywhere and All the Time</h4>
