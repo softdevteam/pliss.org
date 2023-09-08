@@ -3294,3 +3294,12 @@
             margin-right: 1em;
             vertical-align: middle;
         }
+
+	.pdficon {
+	   background-color: #d80000;
+	   color: #fff;
+	   padding: 3px;
+	   border-radius: 7px;
+	   font-size: 75%;
+	   margin-left: 0.5em;
+	}
