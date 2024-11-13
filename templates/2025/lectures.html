@@ -1,0 +1,246 @@
+<%include file="header.inc" args="title='Lectures'"/>
+<!-- Main -->
+<section id="main" class="wrapper">
+  <div class="container">
+    <header class="major special"><h2>Lectures</h2><p></p></header>
+    <div class="content">
+      <div id="hermans" style="margin-top: -6em; position: absolute"></div>
+      <header>
+        <h4>Creating Programming Languages in non-English </h4>
+        <p>Felienne Hermans</p>
+      </header>
+      <p></p>
+      <hr>
+
+      <div id="sophia" style="margin-top: -6em; position: absolute"></div>
+      <header>
+	<h4>Verona: co-designing the type system, concurrency model, and runtime system <span class="pdficon"><a href="slides/Verona.pdf">Verona</a></span> <span class="pdficon"><a href="slides/regions.pdf">Regions</a></span></h4>
+        <p>Sophia Drossopoulou</p>
+      </header>
+      <p>Verona is a language designed and implemented by teams at
+	Microsoft, Uppsalla and Imperial College. Building on the
+	teams’ experiences with Pony, the new language aims to support
+	high-level, high-performance, highly-convenience, safe systems
+	programming.  Verona extends the actor paradigm with
+	asynchronous execution so that multiple actors may form
+	temporal alliances and execute behaviours in concert. It has
+	an ownership-based type system that ensures data race freedom
+	and supports fine-grained, region-specific garbage collection.
+	I will introduce Verona through examples and explore the
+	design space of causal ordering for behaviours and their
+	ramifications when reasoning about Verona.  I will outline the
+	implementation of a C++ runtime and compare Verona to Pony. </P>
+      <hr>
+
+      <div id="tony" style="margin-top: -6em; position: absolute"></div>
+      <header>
+        <h4>On-the-fly concurrent garbage collection formalization and verification</h4>
+        <p>Tony Hosking</p>
+      </header>
+      <p>I introduce the basic principles of concurrent garbage collection,
+      including on-the-fly garbage collection, focusing on the correctness
+      challenges for garbage collectors due to concurrent mutation by the
+      application program. We will then discuss approaches to solving these
+      problems, and characterize these solutions with respect to an abstract
+      garbage collection algorithm in terms of invariants that preserve the
+      safety of the algorithm. I then discuss a concrete garbage collection
+      algorithm designed to operate efficiently on weak memory multicore
+      hardware, and argue informally for its correctness. I then describe how
+      we have been able to formally and mechanically verify the correctness of
+      this algorithm for weak memory using the Isabelle proof assistant.</p>
+      <header>
+        <h4>Advances in production concurrent collectors over the past decade</h4>
+        <p>Tony Hosking</p>
+      </header>
+      <p>We will look at the evolution of production concurrent collectors over
+      the past decade, treating primarily concurrent marking and compaction.
+      Collectors described include Compressor, Azul’s Pauseless/C4 and Collie,
+      OpenJDK’s ZGC and Generational ZGC, OpenJDK’s Shenandoah, and LXR (a
+      mostly non-concurrent, mostly reference-counting compacting collector as
+      counterpoint).</p>
+      <hr>
+
+      <div id="stefan" style="margin-top: -6em; position: absolute"></div>
+      <header>
+      <h4>Interpreters: Everywhere and All the Time <span class="pdficon"><a href="slides/interpreters-everywhere-and-all-the-time.pdf">PDF</a></span></h4>
+      <p>Stefan Marr</p>
+      </header>
+      <p>Implementers often start with an interpreter to sketch how a
+	language may work.  They are easy to implement and great to
+	experiment with.  However, they are also an essential part of
+	dynamic language implementations. We will talk about the
+	basics of abstract syntax trees, bytecodes, and how these
+	ideas can be used to implement a language.  We will also look
+	into optimizations for interpreters: how AST and bytecode
+	interpreters can use run-time feedback to improve performance,
+	and discuss how super nodes and super instructions allows us
+	to make effective use of modern CPUs.</P>
+      <header>
+	<h4>A Brief Introduction to Just-in-Time Compilation</h4>
+	<p>Stefan Marr</p>
+      </header>
+      <p>Since the early days of object-oriented languages, run-time
+      polymorphism has been a challenge for implementers.  Smalltalk
+      and Self pushed many ideas to an extreme, their implementers had
+      to invent techniques such as: lookup caches, tracing and
+      method-based compilation, deoptimization, and maps.  While these
+      ideas originated in the '80s and ‘90s, they are key ingredients
+      of today’s just-in-time compilers for Java, Ruby, Python,
+      JavaScript.   </p>
+
+      <hr>
+
+      <div id="serrano" style="margin-top: -6em; position: absolute"></div>
+      <header>
+      <h4>JavaScript AOT compilation <span class="pdficon"><a href="https://github.com/manuel-serrano/pliss23">GIT</a></span></h4>
+      <p>Manuel Serrano</p>
+      </header>
+      <p>
+      JavaScript is difficult to implement efficiently because
+      expressions have meanings that involve all sorts of different
+      executions not distinguished by any syntactic or type
+      annotation. The intuition is that only JIT compilers can handle
+      it efficiently because they rely on heuristic-based strategies
+      that require both program and data.  Static (AOT) compilers can
+      speculate and use heuristics too!  To demonstrate, we propose
+      Hopc, an AOT compiler for JavaScript, based on the following
+      assumption: The most likely data structure a program will use is
+      the one for which the compiler can produce its best code.  Thus,
+      contrary to most AOTs, Hopc does not rely on complex static
+      analyses. It simply generates its best code that it protects
+      with guards.  In this lecture, I will present the basic
+      techniques for compiling classical dynamically typed functional
+      programming such as Scheme, and then dig into the specificities
+      of JavaScript. </p> <hr>
+
+      <div id="lippautz" style="margin-top: -6em; position: absolute"></div>
+      <header>
+      <h4>Programming languages on the web, now and the future <span class="pdficon"><a href="slides/pl_on_the_web.pdf">PDF</a></span></h4>
+      <p>Michael Lippautz</p>
+      </header>
+      <p>The web is ubiquitous. In this talk we’ll take a whirlwind
+	tour exploring how this system ticks: From a high-level
+	overview of how the web still evolves (quite significantly)
+	down to Chromium (the browser), Blink (the rendering engine),
+	and V8 (the JavaScript virtual machine) as a concrete
+	implementation of the web platform – we’ll cover it all! For
+	V8 specifically, we’ll take a look at its object model,
+	interpreters, various compilers, and garbage collection and
+	see how it accommodates the web’s unique requirements. We’ll
+	see how Blink provides access to the document object model
+	(DOM) via V8’s foreign function interface. We don’t stop with
+	polyglot systems there but rather continue in looking at the
+	future of the web’s programming languages with WebAssembly and
+	how it offers new capabilities.
+      </p>
+      <hr>
+
+      <div id="su" style="margin-top: -6em; position: absolute"></div>
+      <header>
+      <h4>Solidifying the Software Foundationse</h4>
+      <p> Zhendong Su</p>
+      </header>
+      <p>Software applications and technologies are built on top of
+	foundational systems such as compilers, databases, and theorem
+	provers. Such foundations form the trusted computing base, and
+	fundamentally impact software quality and security. Thus,
+	solidifying them is a critical challenge. These lectures will
+	introduce general, effective techniques, and extensive,
+	impactful efforts on finding thousands of critical issues in
+	widely-used compilers, database management systems, and SMT
+	solvers. They will focus on the high-level principles and core
+	techniques, their significant practical successes, and future
+	opportunities and challenges.
+      </p>
+      <hr>
+      
+      <div id="wadler" style="margin-top: -6em; position: absolute"></div>
+      <header>
+      <h4>Programming Language Foundations in Agda</h4>
+      <p>Phil Wadler</p>
+      </header>
+      <p> The most profound connection between logic and computation
+	is a pun. The doctrine of Propositions as Types asserts that a
+	certain kind of formal structure may be read in two ways:
+	either as a proposition in logic or as a type in
+	computing. Further, a related structure may be read as either
+	the proof of the proposition or as a programme of the
+	corresponding type. Further still, simplification of proofs
+	corresponds to evaluation of programs.  Accordingly, the title
+	of this course also has two readings. It may be parsed as
+	“(Programming Language) Foundations in Agda” or “Programming
+	(Language Foundations) in Agda” — the specifications we will
+	write in the proof assistant Agda both describe programming
+	languages and are themselves programmes.  The textbook for the
+	course is a literate Agda script, freely available online at
+	https://plfa.inf.ed.ac.uk. </p>
+      <hr>
+            
+      <div id="james" style="margin-top: -6em; position: absolute"></div>
+      <header>
+      <h4>
+	Convergent Evolution: Everybody's talking about Regions and Lifetimes, but it's all Ownership to me
+	<span class="pdficon"><a href="https://popl23.sigplan.org/details/POPL-2023-tutorialfest/8/RUST-Regions-Uniqueness-Ownership-Types">Slides</a></span>
+      </h4>
+      <p>James Noble</p>
+      </header>
+      <p> Rust has popularised ownership type systems that grant
+	programmers explicit control or their programs' memory
+	management, within the context of a practical systems
+	programming language. Rust's design draws on more than 30
+	years of work across many different programming language
+	research communities: linear functional programming (ICFP),
+	region allocation (PLDI), ownership types (OOPSLA), alias
+	burying (ECOOP).  This talk -- based on a POPL 2023 tutorial
+	curated jointly with Tobias Wrigstad -- will attempt to argue
+	that Rust's lifetimes, ML's regions, Pony's capabilities,
+	C++'s unique_ptr are examples of Convergent Evolution in
+	programming language design.  Compressing six hours of
+	material from a nominally three-hour tutorial into a 3 second
+	"blipvert", I'll go on to speculate about likely further
+	trajectories of language designs and ownership.</p>
+      <hr>
+
+    </div>
+
+    <div class="container" id="w">    
+      <header class="major special"><h2>Workshop talks</h2><p></p></header>
+      <div class="content">
+	<div id="darius" style="margin-top: -6em; position: absolute"></div>
+	<header><h4>In situ lowering for the incremental introduction of an IR</h4> <p>Darius Blasband</p> </header>
+
+	<div id="james2" style="margin-top: -6em; position: absolute"></div>
+	<header><h4>Ten Things I Hate About \nu</h4> <p>James Noble</p> </header><p>
+	  <i>"I know you can be underwhelmed, and you can be
+	    overwhelmed, but can you ever just be, like, whelmed?"</i>
+	    Since the start of the pandemic, I’ve had to learn three
+	    “new“* programming languages (* to me, anyway) and have
+	    learnt them well enough to teach at university. To teach
+	    programming languages, I learned Haskell; to teach formal
+	    methods I learned Dafny; to teach Rust I learned
+	    Rust. Having personally experienced what it is like to
+	    work in these languages, I am in a very good position to
+	    appreciate all their worst points. There will be no
+	    tattoos, no piercings, no ritual animal slaughters of any
+	    kind — rather as adversaries do in law, let us strive
+	    mightily, but eat and drink as friends. <i>"There's a
+	    difference between like and love. Because, I like Pascal,
+	    but I love Smalltalk."</i>
+          </p>
+
+	<div id="tobias" style="margin-top: -6em; position: absolute"></div>
+	<header><h4>Adventures in Fully Concurrent Garbage Collection <span class="pdficon"><a href="slides/ZGC_2023.pdf">PDF</a></span></h4> <p>Tobias Wrigstad</p> </header>
+
+	<div id="david" style="margin-top: -6em; position: absolute"></div>
+	<header><h4>Architecture of the multi-language static analysis platform Infer</h4> <p>David Piachardie</p> </header>
+
+	<div id="jan" style="margin-top: -6em; position: absolute"></div>
+	<header><h4>Reusable Just in time compilation <span class="pdficon"><a href="slides/reusing_JIT.pdf">PDF</a></span></h4> <p>Jan Vitek</p> </header>
+
+	<div id="suresh" style="margin-top: -6em; position: absolute"></div>
+	<header><h4>Verification of Property-Based Test Generators</h4> <p>Suresk Jagannathan</p> </header>
+
+  </div>
+</section>
+
+<%include file="footer.inc" />
