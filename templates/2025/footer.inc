@@ -9,9 +9,10 @@
 				<li><a href="https://pliss.org/2020">PLISS 2020</a></li>
 						<li><a href="https://pliss.org/2021">PLISS 2021</a></li>
 						<li><a href="https://pliss.org/2022">PLISS 2022</a></li>
+						<li><a href="https://pliss.org/2023">PLISS 2023</a></li>
                     </ul>
 					<ul class="copyright">
-						<li>&copy; 2023 PLISS</li>
+						<li>&copy; 2025 PLISS</li>
 						<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
 					</ul>
 				</div>
