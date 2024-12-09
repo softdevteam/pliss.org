@@ -9,9 +9,9 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
 <head>
 <title>
 %if title:
-	PLISS 2023: ${title}
+	PLISS 2025: ${title}
 %else:
-    PLISS 2023
+    PLISS 2025
 %endif
         </title>
 		<meta charset="utf-8" />
