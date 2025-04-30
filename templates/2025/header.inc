@@ -28,6 +28,7 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
         <ul>
 	<li><a href="index.html">Home</a></li>
 	<li><a href="lectures.html">Lectures</a></li>
+	<li><a href="schedule.html">Schedule</a></li>
 	<li><a href="location.html">Location</a></li>
 	<li><a href="speakers.html">Speakers</a></li>
 	<li><a href="organisers.html">Organisers</a></li>
