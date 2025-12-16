@@ -11,6 +11,7 @@
 				<li><a href="https://pliss.org/2022">PLISS 2022</a></li>
 				<li><a href="https://pliss.org/2023">PLISS 2023</a></li>
 				<li><a href="https://pliss.org/2025">PLISS 2025</a></li>
+				<li><a href="https://pliss.org/2026">PLISS 2026</a></li>
                     </ul>
 					<ul class="copyright">
 						<li>&copy; 2025 PLISS</li>
