@@ -4,146 +4,117 @@
   <div class="container">
     <header class="major special"><h2>Lectures</h2><p></p></header>
     <div class="content">
-      <div id="ranjit" style="margin-top: -6em; position: absolute"></div>
-      <header>
-	<h4>Refinement Types for Rust</h4>
-        <p>Ranjit Jhala</p>
-      </header>
-      <p>Refinement types enrich a language's type system with logical
-      predicates that circumscribe the set of values described by the type,
-      thereby providing software developers a tunable knob with which to inform
-      the type system about invariants and correctness properties should be
-      checked on the code. We will show how refinements can work hand in glove
-      with Rust's ownership mechanisms to yield ergonomic type-based
-      verification systems code.</p>
 
-      <div id="shriram" style="margin-top: -6em; position: absolute"></div>
+      <div id="clebsch" style="margin-top: -6em; position: absolute"></div>
       <header>
-	<h4>The Human Factors of Formal Methods</h4>
-        <p>Shriram Krishnamurthi</p>
+	<h4>Implement a Language at this Language Implementation Thing</h4>
+        <p>Sylvan Clebsch</p>
       </header>
-      <p>"Formal methods" include specification, programming, and more: from
-      logics to express to desired program behavior to algorithms to check
-      correctness. Lean is a formal method, SMT is a formal method, LTL is a
-      formal method, Rust's type system is a formal method. As formal methods
-      improve in expressiveness and power, they create new opportunities for
-      non-expert adoption. In principle, formal tools are now powerful enough
-      to enable developers to scalably validate realistic systems artifacts
-      without extensive formal training. However, realizing this potential for
-      adoption requires attention to not only the technical but also the human
-      side—which has received extraordinarily little attention from
-      formal-methods research. This presentation presents some of our efforts
-      to address this paucity. We apply ideas from cognitive science,
-      human-factors research, and education theory to improve the usability of
-      formal methods. Along the way, we find misconceptions suffered by users,
-      how technically appealing designs that experts may value may fail to
-      help, and how our tools may even mislead users.</p>
+      <p>
+      We wanted to build more experimental languages, so we built some
+      experimental tools! Let's use them! We'll use Trieste (a tree-rewriting
+      system) to target VBCC (an IR implemented in Trieste) to generate
+      bytecode for VBCI (a data-race free concurrent infinite-register
+      interpreter). After these talks, you'll know enough about C++ and these
+      tools to implement your own language.
+      </p>
 
-      <div id="greta" style="margin-top: -6em; position: absolute"></div>
+      <div id="flatt" style="margin-top: -6em; position: absolute"></div>
       <header>
-	<h4>OCamlFDO: Feedback-Directed Optimizer for OCaml</h4>
-	<h4>Static zero-alloc checker for OCaml</h4>
-        <p>Greta Yorsh</p>
+	<h4>Metaprogramming in Rhombus</h4>
+        <p>Matthew Flatt</p>
       </header>
+      <p>
+      This tutorial is about syntax and macros in Rhombus. We won’t assume that
+      participants have used Rhombus before, but we also won’t dwell much on
+      the everyday-programming part of the language, since we expect that
+      participants can pick it up easily as we go. Instead, we’ll get into the
+      nuts and bolts of Rhombus’s approach to parsing, syntactic extension, and
+      language creation.
+      </p>
 
-      <div id="david" style="margin-top: -6em; position: absolute"></div>
+      <div id="hosking" style="margin-top: -6em; position: absolute"></div>
       <header>
-	<h4>Building programming languages for memory-safe hardware.</h4>
-	<h4>People who are serious about software should build their own hardware</h4>
-        <p>David Chisnall</p>
+        <h4>Memory management for concurrent Rust data structures</h4>
+        <p>Tony Hosking</p>
       </header>
-      <p>CHERI and similar systems provide a much stronger set of guarantees
-    for languages to rely on, such as trapping out-of-bounds accesses and so
-    on.  At the same time, they disallow intrinsically unsafe operations, such
-  as materialising pointers from thin air.  CHERI was designed to be able to
-  support a C abstract machine but it also provides a rich set of tools for
-language designers and implementers, which this talk will discuss. In the 1960s
-and '70s, computers came with a wide variety of abstract machines.  The
-Burroughs Large Systems series implemented type-based tagging and
-hardware-assisted GC that allowed the entire OS to be written in a
-garbage-collected Algol dialect.  Various Lisp machines accelerated different
-language-specific operations.  The Intel APχ432 accelerated Ada (very badly, as
-a result of taping out the CPU before talking to the compiler team).  But by
-the mid '80s, The C / PDP-11 abstract machine was the dominant abstraction.
-Processor vendors competed build faster and faster PDP-11s.  This led to a
-feedback cycle.  Fast processors were ones that ran code written in C-like
-languages quickly.  Programs that needed performance used C-like languages,
-driving processor vendors to optimise for these workloads.  Around 2007,
-process technology hit the end of Dennard Scaling, which made smaller
-transistors both faster and lower power.  Since then, CPUs have continued to
-improve performance, but much more slowly.  Real performance wins have come
-from accelerators, where there's a much tighter coupling between language and
-hardware designs.  This presents an opportunity for language designers to build
-things that can work on current hardware but which could be significantly
-accelerated by alternate designs.  This talk will discuss how researchers can
-build prototype hardware and engage with hardware vendors to build languages
-for the next 50 years.</h4>
+      <p>
+      </p>
 
-      <div id="jeremy" style="margin-top: -6em; position: absolute"></div>
       <header>
-	<h4>The Virtualized Labours of Hercules: Strengthening the Security of Modern Language Runtimes</h4>
-        <p>Jeremy Singer</p>
-      </header>
-      <p>Just as the mythical Hercules grappled with foes on multiple fronts,
-      today's programming language runtimes face relentless attacks from a
-      variety of malicious actors. This presentation explores the diverse
-      attack surfaces that modern runtimes expose, considering effective
-      strategies for mitigating these risks in real-world systems. We'll
-      examine key trends in micro-architecture, such as tagged pointers and
-      trusted execution environments, demonstrating how these innovations can
-      be harnessed by language runtimes to deliver enhanced security. Many of
-      our insights are drawn from research conducted on CHERI platforms as part
-      of the Capable VMs project. Looking ahead, we'll speculate on the
-      evolution of processor design and how future hardware might incorporate
-      advanced security mechanisms. From a language implementation standpoint,
-      we will discuss how these developments could transform the landscape of
-      future runtime security.</p>
-
-      <div id="hila" style="margin-top: -6em; position: absolute"></div>
-      <header>
-	<h4>Generating correct code for your programmers</h4>
-        <p>Hila Peleg</p>
+      <h4>Transactions and persistence for WebAssembly"</h4>
+        <p>Tony Hosking</p>
       </header>
 
-      <div id="tomas" style="margin-top: -6em; position: absolute"></div>
+      <div id="ryu" style="margin-top: -6em; position: absolute"></div>
       <header>
-	<h4>Programming systems deserve a theory too!</h4>
-	<p>Tomas Petricek</p>
+	<h4>Mechanized Specifications Adopted by Real-World Programming Languages</h4>
+        <p>Sukyoung Ryu</p>
       </header>
-      <p>We know how to study programming languages, but programs are created
-      not just by writing code. They are created by interacting with rich,
-      stateful programming systems and environments. Programming systems still
-      involve code, but they also include live previews, structure editors,
-      debugging tools, runtime environments and other developer tools. If we
-      want to make programming easier, more accessible and more flexible, we
-      should shift our attention from programming languages to programming
-      systems! In this tutorial, I will introduce different research methods
-      that can be used for studying programming systems. We will look at
-      interesting characteristics of past programming systems that were lost in
-      history, look how to adapt formalisms familiar from programming languages
-      to study interactive systems and also explore what a research
-      implementations of small programming system can teach us! Throughout the
-      tutorial, you will encounter a variety of systems ranging from modern
-      IDEs and Jupyter Notebooks to Smalltalk and Commodore 64 BASIC.</p>
+      <p>
+      Real-world programming languages have multiple implementations and
+      continue to evolve, often resulting in inconsistencies between
+      implementations. To mitigate this issue, language mechanization
+      frameworks have been proposed, which guarantee the same behavior between
+      the executable semantics described in a mechanized specification and
+      tools such as interpreters automatically generated from the mechanized
+      specification. Recently, three real-world programming languages have
+      adopted mechanized specifications. In 2022, the TC39 committee decided to
+      integrate ESMeta into the CI systems of the JavaScript language
+      specification and its official test suite. In 2025, the WebAssembly
+      (Wasm) Community Group voted to adopt SpecTec for authoring future
+      versions of the Wasm specification. The P4 Language Design Working Group
+      considers adopting P4-SpecTec for authoring the P4 specification. For
+      each adoption case, we share the challenges faced by the language
+      community, how the mechanization framework addressed them, and how the
+      language community’s governance helped promote adoption. We discuss
+      programming languages promising for mechanization, various mechanization
+      frameworks, and frequently asked questions regarding the adoption of
+      mechanized specifications into new programming languages.
+      </p>
 
-      <div id="ben" style="margin-top: -6em; position: absolute"></div>
+      <div id="thakur" style="margin-top: -6em; position: absolute"></div>
       <header>
-	<h4>Inside the Wizard Research Engine</h4>
-	<p>Ben Titzer</p>
+	<h4>Fixing the see-saw: Enabling Precise Optimizations in JIT Compilers, Efficiently</h4>
+        <p>Manas Thakur</p>
       </header>
-      <p>WebAssembly offers the hope of a fast, portable low-level target that
-      competes with native code performance, but without many of the drawbacks
-      of native code. Born in the Web, Wasm now runs in many contexts, such as
-      embedded systems, cloud and edge deployments, embedded systems, and
-      blockchains. With new features in Wasm that add garbage-collected data,
-      first-class functions, and stack switching, it offers the tantalizing
-      opportunity to retarget many programming languages for greater safety and
-      portability. Yet these new features offer new challenges, and some of the
-      same challenges facing managed runtimes. In this talk, I will outline my
-      work on a Wasm engine, Wizard, designed for instrumentation, dynamic
-      analysis, and experimentation. In particular, I’ll cover its support for
-      dynamic instrumentation and analysis, with support in multiple execution
-      tiers.</p>
+      <p>
+      Just-in-time (JIT) compilers offer novel ways to optimize programs based
+      on their execution profile and have found significant usage in languages
+      with managed runtimes. However, as JIT compilation directly affects the
+      execution time of a program, precision-enhancement techniques from the
+      static-analysis world seldom find way into these otherwise powerful
+      systems. Under this backdrop, we would first understand how modern JIT
+      compilers optimize code, using examples of program analysis aimed at
+      enabling stack allocation of heap objects in Java. We would then
+      understand techniques to not only allocate a large number of objects on
+      stack (leading to reduced garbage collection and improved performance),
+      but to also handle challenges posed by possible dynamism in real-world
+      Java Virtual Machines. In particular, we would talk about AOT-analysis
+      guided optimistic stack allocation, as well as the usage of speculative
+      JIT information in improving the precision of statically computed
+      results. All parts of the story would be bound by the over-arching goal
+      of maintaining precision and efficiency, while being sound, during
+      program execution.
+      </p>
+
+      <div id="wrigstad" style="margin-top: -6em; position: absolute"></div>
+      <header>
+	<h4>Retrofitting Data-Race Freedom — Or: I'll Try Anything Twice</h4>
+        <p>Tobias Wrigstad</p>
+      </header>
+      <p>
+      No two train wrecks are alike? I will be reporting on two attempts at
+      retrofitting data-race freedom to two different programming languages —
+      Python and Java — that both have existed for more than 30 years, and are
+      the result of tons on pragmatic design decisions, both at the language
+      level and at the implementation level. The lecture encompasses language
+      design, implementation, pragmatism, as well as lessons learned working
+      with both languages and comparisons of two different approaches to
+      achieving backwards compatibility. 
+      </p>
+
+    </div>
   </div>
 </section>
 
