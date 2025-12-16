@@ -30,6 +30,7 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
 	<li><a href="location.html">Location</a></li>
 	<li><a href="organisers.html">Organisers</a></li>
 	<li><a href="registration.html">Registration</a></li>
+	<li><a href="speakers.html">Speakers</a></li>
 	</ul>
 	</nav>
 </header>
