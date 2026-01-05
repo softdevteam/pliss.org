@@ -4,6 +4,36 @@
   <div class="container">
     <header class="major special"><h2>Lectures</h2><p></p></header>
     <div class="content">
+      <div id="ahmed" style="margin-top: -6em; position: absolute"></div>
+      <header>
+        <h4>Formally Specifying ABIs for Modern Programming Languages </h4>
+        <p>Amal Ahmed</p>
+      </header>
+      <p>
+      The Application Binary Interface (ABI) for a language specifies the
+      interoperability rules for each of its target platforms, including
+      properties such as data layout and calling conventions. Compliance with
+      these rules ensures “safe” execution and may provide certain guarantees
+      about resource usage. These rules are relied upon by compilers for that
+      language and others, as well as libraries and foreign-function
+      interfaces. Unfortunately, ABIs are typically specified in prose and,
+      while type systems for source languages have grown richer over time, ABIs
+      have largely remained the same, lacking analogous advances in
+      expressivity and safety guarantees.</p>
+
+      <p>In these lectures, I’ll outline a vision for richer, semantic ABIs that
+      would facilitate safer interoperability and library integrations,
+      supported by a novel methodology for formally specifying ABIs using
+      realizability models. These semantic ABIs relate abstract, high-level
+      types to unwieldy, but well-behaved, low-level code. I’ll illustrate the
+      approach with small case studies, showing how this methodology leverages
+      the last two decades of progress on separation logics and semantic
+      models. I’ll also discuss different practically-motivated ABI design
+      decisions and how they can be formalized, including a Swift-style ABI
+      with library evolution. Finally, I’ll describe a new verified compiler
+      backend we’re building to enable easier specification of ABIs for the
+      WebAssembly platform for high-level languages in the future.
+      </p>
 
       <div id="clebsch" style="margin-top: -6em; position: absolute"></div>
       <header>
@@ -45,6 +75,35 @@
       <h4>Transactions and persistence for WebAssembly"</h4>
         <p>Tony Hosking</p>
       </header>
+
+      <header>
+      <h4>Type Systems for Capabilities</h4>
+      <p>Martin Odersky</p>
+      </header>
+      <p>
+      I will cover the general concept of capabilities, how capabilities can be
+      leveraged for security, and how they can describe effects. I will then
+      work out principles of type systems that allow to track statically which
+      capabilities are captured in objects and closures. These type systems use
+      a form of dependent types that can refer to values but not general terms.
+      Finally, the talk presents elements of a concrete type system that does
+      this in Scala 3.
+      </p>
+
+      <header>
+      <h4>Implementing a Capture Checker</h4>
+      <p>Martin Odersky</p>
+      </header>
+      <p>
+      I will give an outline of the capture checker in Scala 3, which plays a
+      role similar to the borrow checker for Rust. It is complex type analysis
+      that runs after the type checker and inferencer proper. This two-phase
+      nature poses some questions how the second phase can build on and refine
+      the type inference done in the first phase. The solution  is to decorate
+      the types produced in the first phase by capture set variables that are
+      inferred in a propagation-based constraint solver. The talk will describe
+      the constraints that arise and the techniques used in the solver.
+      </p>
 
       <div id="ryu" style="margin-top: -6em; position: absolute"></div>
       <header>
