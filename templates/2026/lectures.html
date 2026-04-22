@@ -97,35 +97,6 @@
         <p>Tony Hosking</p>
       </header>
 
-      <header>
-      <h4>Type Systems for Capabilities</h4>
-      <p>Martin Odersky</p>
-      </header>
-      <p>
-      I will cover the general concept of capabilities, how capabilities can be
-      leveraged for security, and how they can describe effects. I will then
-      work out principles of type systems that allow to track statically which
-      capabilities are captured in objects and closures. These type systems use
-      a form of dependent types that can refer to values but not general terms.
-      Finally, the talk presents elements of a concrete type system that does
-      this in Scala 3.
-      </p>
-
-      <header>
-      <h4>Implementing a Capture Checker</h4>
-      <p>Martin Odersky</p>
-      </header>
-      <p>
-      I will give an outline of the capture checker in Scala 3, which plays a
-      role similar to the borrow checker for Rust. It is complex type analysis
-      that runs after the type checker and inferencer proper. This two-phase
-      nature poses some questions how the second phase can build on and refine
-      the type inference done in the first phase. The solution  is to decorate
-      the types produced in the first phase by capture set variables that are
-      inferred in a propagation-based constraint solver. The talk will describe
-      the constraints that arise and the techniques used in the solver.
-      </p>
-
       <div id="ryu" style="margin-top: -6em; position: absolute"></div>
       <header>
 	<h4>Mechanized Specifications Adopted by Real-World Programming Languages</h4>
