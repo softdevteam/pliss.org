@@ -97,6 +97,30 @@
         <p>Tony Hosking</p>
       </header>
 
+      <div id="marr" style="margin-top: -6em; position: absolute"></div>
+      <header>
+	      <h4>A Brief Introduction to Just-in-Time Compilation</h4>
+	      <p>Stefan Marr</p>
+      </header>
+      <p>Since the early days of object-oriented languages, run-time
+      polymorphism has been a challenge for implementers.  Smalltalk
+      and Self pushed many ideas to an extreme, their implementers had
+      to invent techniques such as: lookup caches, tracing and
+      method-based compilation, deoptimization, and maps.  While these
+      ideas originated in the '80s and ‘90s, they are key ingredients
+      of today’s just-in-time compilers for Java, Ruby, Python,
+      JavaScript.   </p>
+
+      <header>
+	      <h4>Benchmarking on Modern Hardware: Techniques for Performance Comparisons from Day-To-Day Experimenting to Paper Writing
+</h4>
+	      <p>Stefan Marr</p>
+      </header>
+      <p>Modern systems are great! In many ways, they adapt to our software, and optimize it, despite us not really knowing what we are doing, and to a degree that would have been considered magic just a few decades ago.
+         Though, once we develop our own research ideas on top of these systems and want to make any argument about performance, all this "magic" makes it hard to understand what measurements mean. Worse yet, making sensible performance claims means we have to understand a good chunk of it. Is this benchmark 20% faster because of what I did, or did the CPU increase the clock frequency for the new but not for the old code? Did the JVM just trigger garbage collection? Did the just-in-time compiler slow down my code? What do you mean, "efficiency core"?<br>
+         In this lecture, we will have a brief look at why benchmarking on modern systems is hard and what can go wrong. Then we will discuss a range of different research scenarios to get a better feeling of what we may need for our work. Since much of this work may involve gradually building up our own systems, we will also look at what it takes to build them based on reliable feedback.<br>
+         In the second part, we will look at how we can turn the often chaotic scientific process, with all its trials and errors, into a "scientific engineering process" that enables us to try and try again. I'll suggest a process that allows us to use the same setup that we use for developing our system to not just understand its performance, but also use it to run the experiments we may want for a scientific paper. I'll demonstrate how to go from daily pull requests with continuous performance tracking to generating plots and statistics for direct inclusion in LaTeX.</p>
+
       <div id="ryu" style="margin-top: -6em; position: absolute"></div>
       <header>
 	<h4>Mechanized Specifications Adopted by Real-World Programming Languages</h4>
