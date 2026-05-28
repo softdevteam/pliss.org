@@ -86,10 +86,59 @@
 
       <div id="hosking" style="margin-top: -6em; position: absolute"></div>
       <header>
-        <h4>Memory management for concurrent Rust data structures</h4>
+            <h4>Memory management for concurrent Rust data structures</h4>
         <p>Tony Hosking</p>
+        <p><a href="/2026/slides/hosking.pdf">Slides</a></p>
       </header>
       <p>
+      Concurrent data structures in Rust rely on manual memory reclamation —
+      epoch-based reclamation (EBR), hazard pointers, or Hyaline — to safely
+      free removed nodes without use-after-free errors. These techniques are
+      correct but impose a discipline burden: every removal path must invoke
+      the right retire function, and reclamation subsystems must be carefully
+      configured per data structure.
+      </p>
+      <p>
+      This talk explores whether tracing garbage collection can replace that
+      discipline. We use <a href="https://soft-dev.org/pubs/html/hughes_tratt__garbage_collection_for_rust_the_finalizer_frontier/index.html">Alloy</a> (Hughes & Tratt, OOPSLA 2025), a fork of the
+      Rust compiler that adds a first-class Gc<lt;T>gt; smart pointer backed by the
+      Boehm–Demers–Weiser (BDW) conservative GC, and apply it to two
+      production-grade concurrent hash maps: *papaya* (lock-free,
+      Hyaline-based) and *SCC* (bucket-locked, EBR-based). In both cases,
+      replacing manual retire calls with Gc<lt;T>gt; substantially simplifies the
+      reclamation logic while preserving correctness.
+      </p>
+      <p>
+      The central engineering challenge is performance. Naively routing all
+      allocations through BDW produces a 16 GB heap and severe stop-the-world
+      pause pressure at high thread counts. We address this with a *hybrid
+      allocation strategy*: map infrastructure (bucket arrays, the container
+      itself) is allocated via RootAllocator (GC_malloc_uncollectable),
+      keeping it outside the collectable heap while still reachable as GC
+      roots; only the map entries themselves use Gc<lt;T>gt; (GC_malloc). This
+      reduces the BDW heap from gigabytes to megabytes: the 16 GB heap arose
+      because installing GcAllocator as the global allocator diverted all
+      standard Rust allocations through BDW; the hybrid approach avoids this,
+      confining BDW to only the explicitly Gc<lt;T>gt;-allocated entries.
+      </p>
+      <p>
+      We also describe new type-system machinery added to Alloy in our work:
+      the Untraced auto trait for statically verifying that atomic
+      allocations contain no traced pointers, and GcAtomic<lt;T>gt; for GC-aware
+      lock-free atomic pointers. We leverage Alloy's existing Finalizer Safety
+      Analysis (FSA) for compile-time safety of finalizers running on a
+      background thread.
+      </p>
+      <p>
+      Benchmarks on a 24-thread Intel Xeon and a 64-core AMD EPYC show that
+      hybrid Alloy variants match or lead non-GC baselines at low-to-mid thread
+      counts. At high core counts, BDW stop-the-world pauses and global
+      allocator lock contention become the bottleneck, with scaling falling
+      away relative to DashMap and papaya. These results expose the key
+      scalability challenges that must be addressed on the path to
+      production-ready GC-backed concurrent data structures in Rust, and we
+      discuss concrete steps: BDW incremental and generational modes, parallel
+      marking, safepoint integration, and precise tracing.
       </p>
 
       <header>
